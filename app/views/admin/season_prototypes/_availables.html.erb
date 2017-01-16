@@ -1,0 +1,36 @@
+<div id='rental-property-season-dialog' class='modal fade'>
+  <div class='modal-inner'>
+    <div class='modal-header'>
+      <a class="close" data-dismiss="modal">×</a>
+      <h3><%= "Création de saisons (#{@rental_property.labelize})".html_safe %></h3>
+    </div>
+    <div class='modal-body'> 
+      <table id="season_prototypes" class="<%= Gko::Core.admin_table_css %>">
+        <thead>
+          <tr>
+            <th></th>
+            <th><%= t("simple_form.labels.season_prototype.title") %></th>
+            <th><%= t("simple_form.labels.season_prototype.start_date") %></th>
+            <th><%= t("simple_form.labels.season_prototype.end_date") %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% if @season_prototypes.empty? %> 
+            <tr><td colspan="4"><%= t( "admin.season_prototypes.collection.empty", :link => '').html_safe %></td></tr>
+          <% else %> 
+            <% @season_prototypes.each do |record| %>
+              <tr id="<%= dom_id(record) %>">
+                <td><%= record.labelize %></td>
+                <td><%= record.start_date %></td>
+                <td><%= record.end_date %></td>
+                <td class="actions"><p><%= icon_to(select_admin_site_season_prototype_path(current_site, record, :rental_property_id => @rental_property, :cl => @resource_locale), 'plus icon-white', 
+						:class => "btn-success add_variant_to_order_btn",
+						:remote => true, :method => :post) %></p></td>
+              </tr>
+            <% end %> 
+          <% end %> 
+        </tbody>
+      </table>                     
+    </div>
+  </div>  
+</div>

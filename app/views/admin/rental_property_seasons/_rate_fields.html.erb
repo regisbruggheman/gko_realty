@@ -1,0 +1,10 @@
+<tr class="rate fields">
+  <td><%= f.text_field :bedroom_count, :required => true, :class => :string %></td>
+  <td><%= f.text_field :eur_price, 
+    :disabled => @rental_property.currency != '€', 
+    :class => :string %></td>
+  <td><%= f.text_field :usd_price, 
+    :disabled => @rental_property.currency != '$', 
+    :class => :string %></td>
+  <td class="actions"><%= icon_to_remove_fields(f) %></td>
+</tr>

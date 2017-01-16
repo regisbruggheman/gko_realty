@@ -1,0 +1,2 @@
+$("tr#<%= dom_id(@season_prototype) %>").hide();
+$("table#seasons").append($("<%= escape_javascript(render(:partial => 'admin/rental_properties/season', :locals => { :season => @rental_property_season })) %>"));

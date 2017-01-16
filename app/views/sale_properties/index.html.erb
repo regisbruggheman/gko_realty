@@ -1,0 +1,17 @@
+<%
+title = if @category
+  t("#{resource_collection_name}.titles.in_categories", :name => @category.title)
+elsif @tag
+  t("#{resource_collection_name}.titles.tagged", :name => @tag.name) 
+else
+  parent.title 
+end
+
+
+%>
+<%= page_title(title) %>
+<%= render_html_text(parent.body) if parent.body.present? %> 
+<%= render_collection %>
+<% content_for :sidebar do %>
+  <%= render "sale_properties/filter", :section => parent %>
+<% end %>

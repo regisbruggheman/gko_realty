@@ -1,0 +1,13 @@
+<% 
+  bedroom_count_options = ["1","2","3","4","5", "6", "7+"].map do |i| 
+    "<option value='#{i}'>#{t(:'realty.filters.bedroom_count', :count => i)}</option>"
+  end.compact.join("\n").html_safe
+%>
+<div class='form-group'>
+	<%= f.select :with_bedroom_count, 
+		["1","2","3","4","5", "6", "7+"].collect {|i| [ t(:'realty.filters.bedroom_count', :count => i), i ]},
+		{:selected => params[:search].present? ? params[:search][:with_bedroom_count] : nil,
+		:prompt => t(:'helpers.select.bedroom_count.prompt').html_safe}, 
+		{:class => "form-control"} %>
+</div>
+    

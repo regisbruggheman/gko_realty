@@ -1,0 +1,3 @@
+$("#rental-property-season-dialog").modal('hide');
+$("table#seasons").append($("<%= escape_javascript(render(:partial => 'admin/rental_properties/season', :locals => { :season => @rental_property_season })) %>"));
+$("tbody#<%= dom_id(@rental_property_season) %>");

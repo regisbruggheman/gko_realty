@@ -1,0 +1,30 @@
+<tbody id="<%= dom_id(season) %>">
+  <tr>
+    <td class='title'><%= season.labelize %></td>
+    <td class='start_date'><%= format_date(season.start_date) %></td>
+    <td class='end_date'><%= format_date(season.end_date) %></td>
+    <td class="actions">
+      <%= icon_to(gurl_for([:edit, :admin, current_site, @rental_property, season]), 'pencil', :remote => true) %>
+      <%= icon_to(url_for([:admin, current_site, @rental_property, season]), 'trash icon-white',
+          		  :remote => true,
+          		  :method => :delete,
+          		  :confirm => t("confirmations.destroy.rental_property_season")) %>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td colspan="3">
+      <table class="table">
+        <tbody class="rates">
+          <% season.rates.each do |rate| %>
+          <tr class="rate fields">
+            <td><%= "#{rate.bedroom_count} chb." %></td>
+            <td style="font-weight:<%= @rental_property.currency == '€' ? 'bold' : 'normal' %>"><%= number_to_currency(rate.eur_price, :precision => 2, :unit => '€') %></td>
+            <td style="font-weight:<%= @rental_property.currency == '$' ? 'bold' : 'normal' %>"><%= number_to_currency(rate.usd_price, :precision => 2, :unit => '$') %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </td>
+  </tr>
+</tbody>

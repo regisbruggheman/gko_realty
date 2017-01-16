@@ -1,0 +1,25 @@
+<% collection_row_cache(rental_property) do %>
+	<% 
+		tags = []
+		tags << realty_meta_tag("bedroom_count", rental_property.meta.bedroom_count)
+		tags << realty_meta_tag("min_price", rental_min_price_value(rental_property))
+		if rental_property.meta.area.present? 
+		  tags << realty_meta_tag("area", rental_property.meta.area.name)
+		end 
+	%>
+	<%= grid_item_tag_for(rental_property) do %>
+		<%= render_record_thumb(rental_property) %>
+		
+		<%= grid_item_caption_tag do %>
+			<%= render_record_title(rental_property) %>
+	     	<div class="tags-list">
+	      		<%= tags.compact.join(" ").html_safe %>
+	     	</div>
+	     	<%= render_record_description(rental_property) %>
+	     	<%= render_record_link(rental_property) %>
+		<% end %>
+		<% if rental_property.badge.present? %>
+		<div class="thumbnail-badge"><%= rental_property.badge %></div>
+		<% end %>
+	<% end %> 
+<% end %> 

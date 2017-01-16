@@ -1,0 +1,13 @@
+<%= render_collection_header %>
+<% if collection.any? %>
+    <%= grid_tag(parent.column_count) do %>
+        <%= render collection %>
+    <% end %>
+    <%= render_pagination %>
+<% else %>
+    <%= render "no_records_found" %>
+<% end %>
+<% content_for :sidebar do %>
+	<%= render "rental_properties/filter", :section => parent %>
+	<%= render "rental_properties/promotion_list" %>
+<% end %>

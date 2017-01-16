@@ -1,0 +1,27 @@
+<% if f.object.persisted? %>
+<div class='control-group'>
+    <label class="control-label">Propriétés</label>
+    <div class='controls'>
+        <table id="sale_property_assignments" class="<%= Gko::Core.admin_table_css %>">
+          <tbody id="option_values" data-sortable-url="<%= admin_move_path(:model_name => 'SalePropertyAssignment') %>" data-sortable-handle="td.handle">
+            <tr id="none">
+              <td colspan="3"><%= resource.sale_property_assignments.empty? ? t("admin.option_types.no_values") : '' %></td>
+            </tr>
+            <%= f.simple_fields_for :sale_property_assignments do |option_value_form| %>
+              <%= render 'sale_property_assignment_fields', :f => option_value_form %>
+            <% end %>
+          </tbody>
+        </table>
+        <div class="well" id="new_add_option_value">
+          <%= link_to_add_fields "Ajouter une propriété", "tbody#option_values", f, :sale_property_assignments %>
+        </div> 
+    </div>
+</div>
+<% content_for :after_javascript_libraries do %>
+<script type="text/javascript">
+  $(document).ready(function() {
+    make_sortable($("#sale_property_assignments tbody"));
+  });
+</script>
+<% end %>
+<% end %>

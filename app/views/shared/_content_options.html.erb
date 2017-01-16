@@ -1,0 +1,5 @@
+<ul class="nav nav-tips">
+  <% options.each do |o| %>
+     <li><strong><%= "#{o.option_type.presentation}: " %></strong><%= o.option_value.presentation %></li>
+  <% end %>
+</ul>

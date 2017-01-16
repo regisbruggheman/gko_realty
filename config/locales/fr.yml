@@ -1,0 +1,477 @@
+fr:
+  promotions: "Promotions"
+  bedrooms: "chambres"
+  rates: "Tarifs par semaine"
+  details: "Description"
+  price_on_request: "Prix sur demande"
+  on_request: "Sur demande"
+  from: Du
+  to: au
+
+  home:
+    featured_sale_properties: Sélection de propriétés en vente
+    view_all_sale_properties: Voir toutes les propriétés en vente
+    featured_rental_properties: Sélection de villas en location
+    view_all_rental_properties: Voir toutes les villas en location
+  activerecord:
+    models:
+      annual_rental_list: Liste des locations annuelles
+      annual_rental: Location annuelle
+      rental_property_list: Liste de biens à la location
+      sale_property: Bien à la vente
+      rental_property: Bien à la location
+      sale_property_list: Liste de biens à la vente
+      sale_property_selection_list: Sélection de biens à la vente
+      rental_property_selection_list: Sélection de biens à la location
+
+  helpers:
+    select:
+      area:
+        prompt: "Quartier"
+      city:
+        prompt: "Destination"
+      category:
+        prompt: "Type"
+      bedroom_count:
+        prompt: "Nb. de chambres"
+      price:
+        prompt: "Prix par semaine"
+    submit:
+      rental_property_inquiry:
+        create: "Envoyer la demande"
+
+  confirmations:
+    destroy:
+      rental_property_list: "Voulez-vous réellement supprimer définitivement cette liste de bien ? <br/>Cette action est irréversible et supprimera tous les biens de la liste!"
+      sale_property_list: "Voulez-vous réellement supprimer définitivement cette liste de bien ? <br/>Cette action est irréversible et supprimera tous les biens de la liste!"
+      sale_property_selection_list: "Voulez-vous réellement supprimer définitivement cette liste de bien ? <br/>Cette action est irréversible!"
+      rental_property_selection_list: "Voulez-vous réellement supprimer définitivement cette liste de bien ? <br/>Cette action est irréversible!"
+      annual_rental_list: "Voulez-vous réellement supprimer définitivement cette liste de bien ? <br/>Cette action est irréversible et supprimera tous les biens de la liste!"
+      annual_rental: "Voulez-vous réellement supprimer définitivement ce bien de la liste ?<br/>Cette action est irréversible!"
+      sale_property: "Voulez-vous réellement supprimer définitivement ce bien de la liste ?<br/>Cette action est irréversible!"
+      rental_property: "Voulez-vous réellement supprimer définitivement cce bien de la liste ?<br/>Cette action est irréversible!"
+      rental_property_season: "Voulez-vous réellement supprimer définitivement cette saison ?<br/>Cette action est irréversible!"
+      option_value: "Voulez-vous réellement supprimer définitivement cette caratéristique ?<br/>Cette action est irréversible!"
+      realty_agent: "Voulez-vous réellement supprimer définitivement cet agent ?<br/>Cette action est irréversible!"
+
+  inquiry_mailer:
+    rental_property_notification:
+      start_date: "Date d'arrivée"
+      property: "Propriété"
+      person_count: "Nombre de personne"
+      end_date: "Date de départ"
+
+    annual_rental_notification:
+      bedroom_count: "Nb. chambre"
+      max_price: "Prix max."
+      area: "Quartier"
+
+  sale_properties:
+    collection:
+      continue: Voir la propriété
+      empty: Aucun bien à la vente n'a été trouvé.
+    links:
+      previous: Précédent
+      next: Suivant
+  rental_properties:
+    collection:
+      continue: Voir la propriété
+      empty: Aucun bien à la location n'a été trouvé.
+    links:
+      previous: Précédent
+      next: Suivant
+  annual_rentals:
+    collection:
+      continue: Voir la propriété
+      empty: "<p>Actuellement nous n'avons pas de location disponible.<br>Vous pouvez nous soumettre votre recherche et nous vous contacterons si un bien venait à se libérer.</p>"
+    links:
+      previous: Précédent
+      next: Suivant
+    form_intro: "Vous pouvez nous soumettre votre recherche et nous vous contacterons si un bien venait à se libérer."
+  realty:
+    price_notes: "Veuillez ajouter 10 % de frais de gestion et 5 % de taxe de séjour aux tarifs indiqués ci dessus."
+    minimum_night: "%{count} nuits minimum"
+    view_all_promotions: "Voir toutes les promotions"
+    request_infos: Demande d'informations
+    request_availability: Vérifier les disponibilités
+    sale_inquiry_title: Plus d'informations
+    stickers:
+      meta_title: Equipement
+    metas:
+      max_guest: Max guest
+      bedroom_count: Nb chambres
+      bathroom_count: Nb SdB
+      room_count: Nb pièces
+      min_price: Prix min.
+      area: Quartier
+      children_policy: Enfants
+      pets_policy: Animaux
+      price: Prix
+      year_built: Année de construction
+      acreage: Superficie totale
+      building_size: Superficie de la propriété
+
+    filters:
+      bedroom_count: "%{count} Chambre(s)"
+      area: Quartier
+      price:
+        per_week: Par semaine
+        less_than: "Moins de %{price}"
+        more_than: "Plus que %{price}"
+
+  simple_form:
+    labels:
+      defaults:
+        realty_agent: Agent immobilier
+        currency: Monnaie
+        code: Reference
+        person_count: Nombre d'invités
+        start_date: Date d'arrivée
+        end_date: Date de départ
+        area: Quartier
+        bedroom_count: Nb. de chambre
+        max_price: Prix. max
+      rental_property:
+        title: "Nom"
+        body: "Description générale"
+      meta:
+        children_policy: "Politique envers les enfants"
+        pets_policy: "Politique envers les animaux"
+        price_note: "Note sur les tarifs"
+        promo_text: "Texte promotionel"
+        description: "Description détaillée"
+        notes: "Notes (non public)"
+        bedroom_count: "Nb.chambres"
+        bathroom_count: "Nb. salles de bain"
+        room_count: "Nb. pièces"
+        max_guest: "Max. invités"
+        statute: Statut
+        code: "Code de référence"
+        eur_min_price: "Prix min. (eur)"
+        eur_max_price: "Prix max. (eur)"
+        usd_min_price: "Prix min. (usd)"
+        usd_max_price: "Prix max. (usd)"
+        lat_long: "Géolocalisation"
+        postcode: "Code Postal"
+        city: "Ville"
+        province_state: "Province/Etat"
+        end_display: "Coup de cœur"
+        country: "Pays"
+        area: "Quartier"
+        show_in_homepage: "Mettre en avant"
+        acreage: Surface totale de la propriété
+        building_size: Surface de la construction
+        year_built: Année de construction
+        video_url: Code video
+
+      option_type:
+        presentation: Nom public
+        name: Nom privé
+        class_name: Type de bien
+      realty_agent:
+        grade: Fonction
+        primary_phone_number_name: Appelation tél. 1
+        primary_phone_number: Numéro tél. 1
+        secondary_phone_number_name: Appelation tél. 2
+        secondary_phone_number: Numéro tél. 2
+        alt_phone_number_name: Appelation tél. 3
+        alt_phone_number: Numéro tél. 3
+        image: Photo
+      rental_property_inquiry:
+        start_date: Date d'arrivée
+        end_date: Date de départ
+        person_count: Nb de personnes
+        phone: Téléphone
+        message: Message
+        adults_count: Adultes
+        children_count: Enfants
+      rental_property_season:
+        title: Nom
+      season_prototype:
+        title: Nom
+
+
+    hints:
+      meta:
+        code: Donner une référence unique à cette propriété. Ce code est privé et à usage interne.
+        lat_long: "Entrer la latitude et longitude de la propriété séparées par une virgule (ex: 17.90000,-62.83333)."
+        notes: "Vous pouvez entrer des remarques concernant cette propriété. Ces remarques sont à usage interne et ne seront pas visibles par les internautes."
+      rental_property_list:
+        currency: "Désigne la monnaie par défaut des propriétés de ce listing.(Vous pouvez modifier la monnaie de chaque propriété individuellement.)"
+      sale_property:
+        price: "Indiquer un montant en %{currency}"
+
+  flash:
+    rental_property:
+      add_in_homepage: "La propriété a été ajoutée avec succès à la page d'accueil."
+      delete_from_homepage: "La propriété a été retirée avec succès de la page d'accueil."
+    sale_property:
+      add_in_homepage: "La propriété a été ajoutée avec succès à la page d'accueil."
+      delete_from_homepage: "La propriété a été retirée avec succès de la page d'accueil."
+
+  admin:
+    areas:
+      select_blank: Sélectionner un quartier
+      menu_tab: Quartiers
+      menu_tab_description: Gérer la liste des quartiers
+      collection:
+        empty: "Aucune quartier n'a été trouvé. %{link}"
+        create_item: "Créer un nouveau quartier maintenant."
+      actions:
+        new: Ajouter un quartier
+        destroy: Supprimer ce quartier
+        edit: Modifier ce quartier
+        index: Lister les quartiers
+        previous: Suivant
+        next: Précédent
+      titles:
+        new: Ajout d'un quartier
+        index: Liste des quartiers
+        edit: Modification d'un quartier
+      columns:
+        rental_property: Quartier
+    cities:
+      no_areas: Aucun quartier n'a été trouvé pour cette ville
+      add_area: Ajouter un quartier
+      select_blank: Sélectionner une ville
+      menu_tab: Villes/Quartiers
+      menu_tab_description: Gérer la liste des villes/quartiers
+      collection:
+        empty: "Aucune ville n'a été trouvé. %{link}"
+        create_item: "Créer une nouvelle ville maintenant."
+      actions:
+        new: Ajouter une ville
+        destroy: Supprimer cette ville
+        edit: Modifier cette ville
+        index: Lister les villes
+      titles:
+        new: Ajout d'une ville
+        index: Liste des villes
+        edit: Modification d'une ville
+
+    fieldset:
+      rates: Tarifs
+
+    option_types:
+      menu_tab: Caractéristiques de propriété
+      menu_tab_description: Les caractéristiques de propriété vous permettent de créer de nouvelles valeurs à choix multiples pour l'ensemble des biens à la vente et à la location
+      add_value: Ajouter une valeur à cette caractéristique
+      no_values: Aucune valeur n'a été trouvé pour cette caractéristique
+      actions:
+        edit: Modifier cette caractéristique
+        new: Créer une nouvelle caractéristique
+        destroy: Supprimer cette caractéristique
+        index: Liste des caractéristiques
+      tooltips:
+        index: Lister les caractéristiques
+      titles:
+        new: Ajout d'une caractéristique
+        index: Liste des caractéristiques
+        edit: Modification d'une caractéristique
+
+    annual_rental_lists:
+      actions:
+        edit: Configuration
+        new: New
+        destroy: Destroy
+        index: Index
+      tooltips:
+        edit: Modifier la page du listing des propriétés
+      titles:
+        edit: Modification de la configuration du listing
+
+    annual_rentals:
+      select_blank: Sélectionner un bien
+      collection:
+        empty: "Aucun bien à la location n'a été trouvé. %{link}"
+        create_item: "Créer un nouveau bien maintenant."
+      actions:
+        new: Ajouter un bien
+        destroy: Supprimer ce bien
+        edit: Modifier ce bien
+        index: Liste
+        view: Voir la page publique de ce bien
+        previous: Suivant
+        next: Précédent
+      tooltips:
+        index: Lister les biens
+      titles:
+        new: Ajout d'un bien
+        index: Liste des biens
+        edit: Modification d'un bien
+      columns:
+        content: Bien
+
+    realty_agents:
+      menu_tab: Agents immobiliers
+      menu_tab_description: Vous pouvez attribuer un agent immobilier à un bien particulier
+      collection:
+        empty: "Aucun agent immobilier n'a été trouvé. %{link}"
+        create_item: "Créer un agent immobilier maintenant."
+      actions:
+        edit: Modifier cet agent immobilier
+        new: Créer un agent immobilier
+        destroy: Supprimer cet agent immobilier
+        index: Liste des agents immobiliers
+      tooltips:
+        index: Lister les agents immobiliers
+      titles:
+        new: Ajout d'un agent immobilier
+        index: Liste des agents immobiliers
+        edit: Modification d'un agent immobilier
+
+    rental_property_lists:
+      actions:
+        edit: Configuration
+        new: New
+        destroy: Destroy
+        index: Index
+      tooltips:
+        edit: Modifier la page du listing des propriétés
+      titles:
+        edit: Modification de la configuration du listing
+
+    rental_properties:
+      untranslated_message:
+        one: "Attention: 1 propriété n'est pas traduite."
+        many: "Attention: %{count} propriétés ne sont pas traduites."
+      select_blank: Sélectionner une propriété à la location
+      menu_tab: Propriétés à la location
+      collection:
+        empty: "Aucune propriété à la location n'a été trouvée. %{link}"
+        create_item: "Créer une nouvelle propriété maintenant."
+      actions:
+        new: Ajouter une propriété à la location
+        destroy: Supprimer cette propriété à la location
+        edit: Modifier cette propriété à la location
+        index: Liste
+        view: Voir la page publique de cette propriété
+        previous: Suivant
+        next: Précédent
+        add_season: Ajouter une saison
+        add_seasons: Ajouter des saisons(modèles)
+        add_rate: Ajouter un tarif
+        select_season_prototype: Sélectionner un modèle de saison
+      tooltips:
+        index: Lister les propriétés à la location
+      titles:
+        new: Ajout d'une propriété à la location
+        index: Liste des propriétés à la location
+        edit: Modification d'une propriété à la location
+      columns:
+        rental_property: Propriété
+
+    sale_property_lists:
+      actions:
+        edit: Configuration
+        new: New
+        destroy: Destroy
+        index: Index
+      tooltips:
+        edit: Modifier la page du listing des propriétés
+      titles:
+        edit: Modification de la configuration du listing
+
+    sale_properties:
+      untranslated_message:
+        one: "Attention: 1 propriété n'est pas traduite."
+        many: "Attention: %{count} propriétés ne sont pas traduites."
+      select_blank: Sélectionner une propriété à la vente
+      menu_tab: Propriétés à la vente
+      collection:
+        empty: "Aucune propriété à la vente n'a été trouvée. %{link}"
+        create_item: "Créer une nouvelle propriété maintenant."
+      actions:
+        new: Ajouter une propriété à la vente
+        destroy: Supprimer cette propriété à la vente
+        edit: Modifier cette propriété à la vente
+        index: Liste
+        view: Voir la page publique de cette propriété
+        previous: Suivant
+        next: Précédent
+      tooltips:
+        index: Lister les propriétés à la vente
+      titles:
+        new: Ajout d'une propriété à la vente
+        index: Liste des propriétés à la vente
+        edit: Modification d'une propriété à la vente
+      columns:
+        rental_property: Propriété
+
+    rental_property_selection_lists:
+        select_blank: Sélectionner une propriété à la location
+        menu_tab: Propriétés à la location
+        collection:
+          empty: "Aucune propriété à la location n'a été trouvée. %{link}"
+          create_item: "Créer une nouvelle propriété maintenant."
+        actions:
+          new: Ajouter une sélection de propriété
+          destroy: Supprimer cette sélection de propriété
+          edit: Modifier cette sélection de propriété
+          index: Liste
+          view: Voir la page publique de cette sélection de propriété
+          previous: Suivant
+          next: Précédent
+        tooltips:
+          index: Lister les sélections de propriété
+        titles:
+          new: Ajout d'une sélection de propriété
+          index: Liste des sélections de propriété
+          edit: Modification d'une sélection de propriété
+        columns:
+          rental_property: Propriété
+
+    sale_property_selection_lists:
+        select_blank: Sélectionner une propriété à la vente
+        menu_tab: Propriétés à la vente
+        collection:
+          empty: "Aucune propriété à la vente n'a été trouvée. %{link}"
+          create_item: "Créer une nouvelle propriété maintenant."
+        actions:
+          new: Ajouter une sélection de propriété
+          destroy: Supprimer cette sélection de propriété
+          edit: Modifier cette sélection de propriété
+          index: Liste
+          view: Voir la page publique de cette sélection de propriété
+          previous: Suivant
+          next: Précédent
+        tooltips:
+          index: Lister les sélections de propriété
+        titles:
+          new: Ajout d'une sélection de propriété
+          index: Liste des sélections de propriété
+          edit: Modification d'une sélection de propriété
+        columns:
+          rental_property: Propriété
+
+    season:
+      links:
+        add: Ajouter une saison
+        remove: Supprimer cette saison
+
+    season_prototypes		:
+      untranslated_message:
+        one: "Attention: 1 modèle de saison n'est pas traduit."
+        many: "Attention: %{count} modèle de saison ne sont pas traduits."
+      select_blank: "Sélectionner un modèle de saison"
+      menu_tab: "Modèles de saison"
+      menu_tab_description: "Gérer les modèles de saison des villas à la location."
+      collection:
+        empty: "Aucun modèle de saison n'a été trouvé. %{link}"
+        create_item: "Créer un modèle de saison maintenant."
+      actions:
+        new: "Ajouter un modèle de saison"
+        destroy: "Supprimer ce modèle de saison"
+        edit: "Modifier ce modèle de saison"
+        index: "Liste des modèles de saison"
+      titles:
+        new: "Création d'un modèle de saison"
+        index: "Liste des modèles de saison"
+        edit: "Modification d'un modèle de saison"
+
+    statutes:
+      menu_tab: Statuts
+    rate:
+      links:
+        add: Ajouter un tarif
+        remove: Supprimer ce tarif

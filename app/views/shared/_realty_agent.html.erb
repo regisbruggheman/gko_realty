@@ -1,0 +1,19 @@
+<% cache [I18n.locale, realty_agent] do %>
+	<div class='realty-agent'>
+	  <%= image_tag(realty_agent.thumbnail.url) if realty_agent.image.present? %>
+	  <div class="realty-agent-infos">
+	      <h4 class="realty-agent-name"><%= realty_agent.name %></h4>
+	      <%= "#{realty_agent.grade}<br/>".html_safe if realty_agent.grade.present? %>
+	      <%= "#{mail_to(realty_agent.email, t("contact_us"), :encode => "javascript")}<br/>".html_safe if realty_agent.email.present? %>
+	      <% if realty_agent.primary_phone_number_name.present? || realty_agent.primary_phone_number.present? %>
+	        <%= "<strong>#{realty_agent.primary_phone_number_name}: </strong> #{realty_agent.primary_phone_number}<br/>".html_safe %>
+	      <% end %>
+	      <% if realty_agent.secondary_phone_number_name.present? || realty_agent.secondary_phone_number.present? %>
+	        <%= "<strong>#{realty_agent.secondary_phone_number_name}: </strong> #{realty_agent.secondary_phone_number}<br/>".html_safe %>
+	      <% end %>
+	      <% if realty_agent.alt_phone_number_name.present? || realty_agent.alt_phone_number.present? %>
+	        <%= "<strong>#{realty_agent.alt_phone_number_name}: </strong> #{realty_agent.alt_phone_number}<br/>".html_safe %>
+	      <% end %> 
+	  </div>
+	</div>
+<% end %>

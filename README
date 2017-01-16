@@ -1,0 +1,3 @@
+cd ~/Github/gko/gko_realty
+git tag -a v0.4.92 -m 'v0.4.92 Stable'
+git push --tags

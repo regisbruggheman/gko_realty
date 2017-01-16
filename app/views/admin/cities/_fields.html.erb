@@ -1,0 +1,25 @@
+<%= f.input :name %>
+<div class='control-group'>
+	<label class="control-label">Quartiers</label>
+	<div class='controls'>
+		<table class="<%= Gko::Core.admin_table_css %>">
+		  <thead>
+		    <tr>
+		      <th>Nom</th>
+		      <th></th>
+		    </tr>
+		  </thead>
+		  <tbody id="areas">
+		    <tr id="none">
+		      <td colspan="3"><%= f.object.areas.empty? ? t("admin.cities.no_areas") : '' %></td>
+		    </tr>
+		    <%= f.simple_fields_for :areas do |area_form| %>
+		      <%= render 'area_fields', :f => area_form %>
+		    <% end %>
+		  </tbody>
+		</table>
+		<div class="well" id="new_add_option_value">
+		  <%= link_to_add_fields t("admin.cities.add_area"), "tbody#areas", f, :areas %>
+		</div> 
+	</div>
+</div> 

@@ -1,0 +1,42 @@
+<fieldset>
+  <legend>Metas</legend>
+  <%= render :partial => 'form_wymeditor_field',
+         :locals => {:f => f, :field_name => :description} %>
+  <%= f.input :video_url %>
+  <%= f.input :code %>
+  <%# if current_site.preferred_use_statutes %>
+    <%#= f.association :statute, :collection =>  current_site.statutes.with_class_name("RentalProperty"), :label_method => :title %>
+  <%# end %>
+  <%= f.input :currency %>
+  <%= f.input :room_count %>
+  <%= f.input :bedroom_count %>
+  <%= f.input :bathroom_count %>
+  <%= f.input :beachfront if current_site.preferred_use_realty_beachfront %>
+  <%= f.input :pool if current_site.preferred_use_realty_pool %>
+  <%= f.input :max_guest %>
+  <%= f.input :end_display %>
+  <legend>Politiques</legend>
+  <%= f.input :children_policy, :input_html => { :rows => 4 } %>
+  <%= f.input :pets_policy, :input_html => { :rows => 4 } %>
+  <legend>Localisation</legend>
+  <%= render "/admin/areas/select", :f => f %>
+  <%#= f.input :postcode %>
+  <%= f.input :lat_long %>
+
+  <%#= render(:partial => "/admin/shared/form_countries_select", :locals => { :f => f }) %>
+  <% if current_site.preferred_use_realty_agent %>
+    <%= render(:partial => "/admin/shared/realty_agents_select", :locals => { :f => f }) %>
+  <% end %>
+
+  <legend>Promotion</legend>
+  <%= f.input :badge %>
+  <%= f.input :promo_text, :as => :text, :input_html => { :class => 'wysihtml5', :rows => 4 } %>
+  
+    <legend>Actualités</legend>
+  <%= f.input :info_title %>
+  <%= f.input :info_body, :as => :text, :input_html => { :class => 'wysihtml5', :rows => 4 } %>
+
+  <legend>Notes</legend>
+  <%= f.input :price_note, :as => :text, :input_html => { :class => 'wysihtml5', :rows => 4 } %>
+  <%= f.input :notes, :input_html => { :rows => 6 } %>
+</fieldset>

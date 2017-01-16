@@ -1,0 +1,15 @@
+<% 
+  options = f.object.available_option_types
+  options.each do |option_type|
+    f.object.content_options.build(:option_type_id => option_type.id)
+  end
+%>
+  
+
+<%= f.simple_fields_for :content_options do |option_form| %>
+  <%= option_form.input :option_type_id, :as => :hidden %>
+  <%= option_form.input :option_value_id, 
+      :label => option_form.object.option_type.presentation.titleize,
+      :collection => option_form.object.option_type.option_values.collect {|ov| [ ov.presentation, ov.id ] } %>     
+<% end %> 
+ 

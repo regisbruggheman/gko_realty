@@ -1,0 +1,35 @@
+<div id='rental-property-season-dialog' class='modal fade'>
+  <div class='modal-inner'>
+  <div class='modal-header'>
+    <a href="#" class="close">x</a>
+    <h3><%= "Edition d'une saison".html_safe %></h3>
+  </div>
+  <%= simple_form_for(resources, :html => { :remote => :true }) do |f| %>
+  <div class='modal-body'>
+    <% if @rental_property_season.try(:errors).present? %>
+      <%= render 'error_messages', :target => @rental_property_season %>
+    <% end %>
+    <%= f.input :title %>
+    <%= f.input :start_date, :required => false, :input_html => { :class => :date }, :as => :string %>
+    <%= f.input :end_date, :required => false, :input_html => { :class => :date }, :as => :string %>
+    <table class="index">
+      <tr>
+        <th><%= t("simple_form.labels.rates.bedroom_count") %></th>
+        <th><%= t("simple_form.labels.season_prototype.eur_price") %></th>
+        <th><%= t("simple_form.labels.season_prototype.usd_price") %></th>
+        <th></th>
+      </tr>
+      <tbody id="rates">
+        <%= f.simple_fields_for(:rates) do |rate_form| %>
+         <%= render :partial => 'admin/rental_property_seasons/rate_fields', :locals => { :f => rate_form } %> 
+        <% end %>
+      </tbody>
+    </table>
+    <%= link_to_add_fields(t("admin.rental_properties.actions.add_rate"),"tbody#rates", f, :rates ) %> 
+  </div>
+  <div class='modal-footer'>
+    <%= render "model_form_buttons", :f => f %>  
+  </div>
+  <% end %>
+  </div>
+</div>

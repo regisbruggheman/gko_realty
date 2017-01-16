@@ -1,0 +1,9 @@
+<%= f.association :city, :collection => current_site.cities,
+  :input_html => { :data => {
+    :dynamic_selectable_url => admin_site_city_areas_path(current_site, ':city_id'),
+    :dynamic_selectable_target => '#property_meta_attributes_area_id' }
+  } %>
+<%= f.association :area, 
+  :collection => f.object.area.present? ? f.object.city.areas : [],
+  :input_html => { :id => 'property_meta_attributes_area_id' } %>
+

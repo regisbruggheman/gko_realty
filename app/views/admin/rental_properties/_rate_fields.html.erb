@@ -1,0 +1,23 @@
+  <% unless resource.persisted? %>
+    <p><%= "Pour ajouter des tarifs, vous devez enregister cette propriété.".html_safe %></p>
+  <% else %>
+    <table id="seasons" class="table root">
+      <thead>
+      <tr>
+        <th><%= t("simple_form.labels.rental_property_season.title") %></th>
+        <th><%= t("simple_form.labels.rental_property_season.start_date") %></th>
+        <th><%= t("simple_form.labels.rental_property_season.end_date") %></th>
+        <th></th>
+      </tr>
+      </thead>
+      <% f.object.seasons.each do |season| %>
+        <%= render :partial => 'admin/rental_properties/season', :locals => { :season => season } %>
+      <% end %>
+    </table>
+    <div class="well">
+      <%= btn_to(t("admin.rental_properties.actions.add_season"), 
+        url_for([:new, :admin, current_site, @rental_property, :rental_property_season]), :remote => true) %>
+      <%= btn_to(t("admin.rental_properties.actions.add_seasons"), 
+        availables_admin_site_season_prototypes_url(current_site, :rental_property_id => f.object.id, :cl => @resource_locale), :remote => true) %>
+    </div>
+  <% end %> 

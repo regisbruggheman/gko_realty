@@ -1,0 +1,10 @@
+.rvmrc
+/tmp
+*.log
+.DS_Store
+.bundle/*
+*.zip
+*.sqlite3
+Gemfile.lock
+*.swp
+*.gem

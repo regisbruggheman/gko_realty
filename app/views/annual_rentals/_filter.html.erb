@@ -1,0 +1,11 @@
+<div class="partial filter annual_rentals hide-on-print">
+  <h4><%= t(:search) %></h4>
+  <%= simple_form_for(:search, :url => url_for([section]), :method => :get, :html => {:class => "filter rental_property"}) do |form| %>
+	<%= render('parent_categories_select', :f => form) %>
+    <%= render "shared/bedroom_count_select", :f => form %>
+    <%= render "shared/area_select", :f => form %> 
+     <div class='control-group'> 
+      <%= form.button 'submit', t('search'), :class => "search" %>
+    </div> 
+  <% end %>
+</div>

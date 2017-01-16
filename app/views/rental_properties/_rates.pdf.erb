@@ -1,0 +1,16 @@
+<ul class='unstyled realty-rates'>
+<% if season.rates.any? %>
+  <% season.rates.each do |rate| %>
+    <li>
+      <span class='realty-rates-bedroom-count'><%= [rate.bedroom_count.to_s, t(:'bedrooms')].join(' ') %></span> 
+      <span class='realty-rates-price'><%= price_for_rate(primary_currency, rate.send(currency_method)) %>
+        <%= content_tag(:em) do %>
+          <%= " (#{price_for_rate(secondary_currency, rate.send(secondary_currency_method))})" %>
+        <% end unless rate.send(secondary_currency_method).blank? %>
+      </span>
+    </li>
+  <% end %>
+<% else %>
+  <li><%= t(:'price_on_request').html_safe %></li>
+<% end %>
+</ul>

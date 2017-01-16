@@ -1,0 +1,12 @@
+<% if @rental_property_season.errors.empty? %>
+	$("#rental-property-season-dialog").modal('hide');
+	var new_season_form = $("<%= escape_javascript(render(:partial => 'admin/rental_property_seasons/modal_form')) %>").appendTo('body');
+	new_season_form.find('input:[type="text"].date').datepicker();  
+	$('html, body').animate({scrollTop:0}, 'slow');
+	new_season_form.modal({backdrop:'static', show:true}).bind('hidden', function(e) {
+		$(this).remove();
+	});
+<% else %>
+	$("#rental-property-season-dialog form:first").replaceWith($("<%= escape_javascript(render(:partial => 'admin/rental_property_seasons/form')) %>"));
+	$("#rental-property-season-dialog").find('input:[type="text"].date').datepicker(); 
+<% end %>

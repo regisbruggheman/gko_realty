@@ -1,0 +1,28 @@
+<div class="partial filter sale_properties hide-on-print">
+  <h4 class="widget-title" ><%= t(:search) %></h4>
+  <%= simple_form_for(:search, :url => url_for([section]), :method => :get, 
+    :html => {:class => "filter rental_property"}) do |form| %>
+        <%= form.input :page, 
+        :as => :hidden,
+        :input_html => { :value => params[:page] || "1" } %>
+	   <div class='form-group'>
+       <%= form.text_field :with_title, 
+		    :placeholder => "Name",
+        :value => (params[:search].present? ? params[:search][:with_title] : nil),
+        :class => "form-control" %>
+    </div>
+    <% if @parent_categories.try(:any?) %>
+      <div class='form-group'>
+      <%= form.select :with_category,
+        options_from_collection_for_select(@parent_categories, :id, :title, params[:search].present? ? params[:search][:with_category] : ''),
+        { :prompt => t(:'helpers.select.category.prompt').html_safe },
+        { :class => "form-control" } %>
+      </div>
+    <% end %>
+    <%= render "shared/bedroom_count_select", :f => form %>
+    <%= render "shared/area_select", :f => form %> 
+    <div class='form-group'> 
+      <%= form.button 'submit', t('search'), :class => "btn btn-default search" %>
+    </div> 
+  <% end %>
+</div>

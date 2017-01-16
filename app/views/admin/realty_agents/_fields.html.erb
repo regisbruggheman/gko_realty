@@ -1,0 +1,11 @@
+<%= f.input :name %>
+<%= f.input :grade %>
+<%= f.input :email %>
+<%= f.input :primary_phone_number_name %>
+<%= f.input :primary_phone_number %>
+<%= f.input :secondary_phone_number_name %>
+<%= f.input :secondary_phone_number %>
+<%= f.input :alt_phone_number_name %>
+<%= f.input :alt_phone_number %>
+<%= render :partial => 'form_file_field', 
+  :locals => {:f => f, :thumb_size => current_site.preferred_realty_agent_image_size, :hint => t("simple_form.hints.partner.image", :size => current_site.preferred_realty_agent_image_size)} %>

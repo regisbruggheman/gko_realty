@@ -1,0 +1,28 @@
+<%= f.input :class_name, :collection => ['RentalProperty', 'SaleProperty'] %>
+<%= f.input :name %>
+<%= f.input :presentation %>
+<div class='control-group'>
+	<label class="control-label">Valeurs</label>
+	<div class='controls'>
+		<table class="<%= Gko::Core.admin_table_css %>">
+		  <thead>
+		    <tr>
+		      <th><%= t("simple_form.labels.option_type.name") %></th>
+		      <th><%= t("simple_form.labels.option_type.presentation") %></th>
+		      <th></th>
+		    </tr>
+		  </thead>
+		  <tbody id="option_values">
+		    <tr id="none">
+		      <td colspan="3"><%= @option_type.option_values.empty? ? t("admin.option_types.no_values") : '' %></td>
+		    </tr>
+		    <%= f.simple_fields_for :option_values do |option_value_form| %>
+		      <%= render 'option_value_fields', :f => option_value_form %>
+		    <% end %>
+		  </tbody>
+		</table>
+		<div class="well" id="new_add_option_value">
+		  <%= link_to_add_fields t("admin.option_types.add_value"), "tbody#option_values", f, :option_values %>
+		</div> 
+	</div>
+</div>

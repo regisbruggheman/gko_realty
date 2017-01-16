@@ -1,0 +1,29 @@
+<% content_for(:sidebar) do %>
+	<%- if action_name == 'show' -%>
+	<%
+	options = resource.content_options
+	has_options = options.try(:any?)
+	tags = []
+	tags << realty_meta_tag("bedroom_count", resource.bedroom_count)
+	tags << realty_meta_tag("price", sale_price_value(@annual_rental, true))
+	if resource.area.present? 
+	  tags << realty_meta_tag("area", resource.area.name)
+	end
+	%>
+	  <div class='partial tags-list'>
+	    <h4><%= t(:'description') %></h4>
+	    <%= tags.compact.join("<br/>").html_safe %>
+		<%= render('/shared/content_options', :options => options) if has_options %>
+	    <%= render_resource_stickers(:title => t(:'details')) %>
+	  </div> 
+	<%- end -%>
+	<%= render "filter", :section => parent %>
+	<%- if action_name == 'show' -%>
+		<% if resource.lat_long.present? %>
+			<div class='partial google_map_container hide-on-print'> 
+				<%= render('shared/google_map', :point => @annual_rental.lat_long) %> 
+		    </div>
+		<% end %>
+	<% end %>
+	<%= render "annual_rental_inquiries/form" %>
+<% end %>

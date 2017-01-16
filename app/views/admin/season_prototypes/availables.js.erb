@@ -1,0 +1,6 @@
+var available_season_prototypes = $("<%= escape_javascript(render(:partial => 'admin/season_prototypes/availables')) %>").appendTo('body');
+available_season_prototypes.find('input:[type="text"].date').datepicker();
+$('html, body').animate({scrollTop:0}, 'slow');
+available_season_prototypes.modal({backdrop:'static', show:true}).bind('hidden', function(e) {
+	$(this).remove();
+});

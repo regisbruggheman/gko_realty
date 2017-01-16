@@ -1,0 +1,21 @@
+<%# cache [collection_record_cache_key(annual_rental), annual_rental.updated_at.to_i] do %>
+	<%
+		tags = []
+		tags << realty_meta_tag("bedroom_count", annual_rental.bedroom_count)
+		tags << realty_meta_tag("price", annual_price_value(annual_rental))
+		if annual_rental.area.present? 
+  			tags << realty_meta_tag("area", annual_rental.area.name)
+		end 
+	%>
+	<%= grid_item_tag_for(annual_rental) do %>
+		<%= render_record_thumb(annual_rental) %>
+		<%= grid_item_caption_tag do %>
+			<%= render_record_title(annual_rental) %> 
+			<div class="tags-list">
+				<%= tags.compact.join(" ").html_safe %>
+			</div>
+			<%= render_record_description(annual_rental) %>
+			<%= render_record_link(annual_rental) %>
+		<% end %>
+	<% end %>
+<%# end %>

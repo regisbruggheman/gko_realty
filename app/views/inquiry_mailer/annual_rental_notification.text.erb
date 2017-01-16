@@ -1,0 +1,20 @@
+
+<%= t('inquiry_mailer.notification.greeting') %>,
+
+<%= t('inquiry_mailer.notification.you_received_new_inquiry') %>
+
+<%= t('inquiry_mailer.notification.inquiry_starts') %>
+
+<%= t('inquiry_mailer.notification.from') %>: <%= @inquiry.name %>
+<%= t('inquiry_mailer.notification.email') %>: <%= @inquiry.email %>
+<%= t('inquiry_mailer.notification.phone') %>: <%= @inquiry.phone %>
+<%= t('inquiry_mailer.annual_rental_notification.bedroom_count') %>: <%= @inquiry.bedroom_count %><br/>
+<%= t('inquiry_mailer.annual_rental_notification.max_price') %>: <%= @inquiry.max_price %><br/>
+<%= t('inquiry_mailer.annual_rental_notification.area') %>: <%= @inquiry.area %><br/>
+<%= t('inquiry_mailer.notification.message') %>:
+<%= @inquiry.message %>
+
+<%= t('inquiry_mailer.notification.inquiry_ends') %>
+
+<%= t('inquiry_mailer.notification.closing_line') %>,
+<%= @inquiry.site.title %>

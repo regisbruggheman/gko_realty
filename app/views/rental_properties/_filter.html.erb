@@ -1,0 +1,28 @@
+<% 
+  price_options = []
+  price_options << t(:'realty.filters.price.less_than', :price => 4000)
+  price_options << "4000 - 10000"
+  price_options << t(:'realty.filters.price.more_than', :price => 10000)
+  price_options.compact.join("\n").html_safe
+
+  properties = site.rental_properties.published.with_translations(I18n.locale)
+%>
+<div class="partial filter rental_properties hide-on-print">
+  <h4><%= t(:search).html_safe %></h4>
+  <%= simple_form_for(:search, 
+	:url => url_for([section]), 
+	:method => :get,
+	:data => {:remote => true }, 
+	:html => {:class => "filter rental_property"}) do |form| %>
+    <%= render "shared/bedroom_count_select", :f => form %>
+    <%= render "shared/area_select", :f => form %>  
+      <%= form.input :price, 
+        :collection => price_options, 
+        :prompt => t(:'helpers.select.price.prompt').html_safe,
+        :label => false,
+        :as => :select %>
+     <div class='control-group'> 
+      <%= form.button 'submit', t('search'), :class => "search" %>
+    </div> 
+  <% end %>
+</div> 

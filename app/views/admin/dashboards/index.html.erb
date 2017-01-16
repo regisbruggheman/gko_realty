@@ -1,0 +1,29 @@
+<% content_for :page_title do %>
+  <%= "Bienvenue sur votre interface d'administation".html_safe %>
+<% end %>
+<div class='well'>
+  <ul class='nav nav-tabs nav-stacked'>
+    <li><%= btn_to(t('admin.season_prototypes.menu_tab'),
+          admin_site_season_prototypes_url(current_site),
+          :description => t('admin.season_prototypes.menu_tab_description')) %></li>
+    <li><%= btn_to(t('admin.option_types.menu_tab'),
+          admin_site_option_types_url(current_site),
+          :description => t('admin.option_types.menu_tab_description')) %></li>
+    <% if current_site.preferred_use_realty_agent %>
+    <li><%= btn_to(t('admin.realty_agents.menu_tab'),
+          admin_site_realty_agents_url(current_site),
+          :description => t('admin.realty_agents.menu_tab_description')) %></li>
+    <% end %>
+    <li><%= btn_to(t('admin.cities.menu_tab'),
+          admin_site_cities_url(current_site),
+          :description => t('admin.cities.menu_tab_description')) %></li> 
+    <% if current_site.preferred_use_statutes %>
+    <li><%= btn_to(t('admin.statutes.menu_tab'),
+          admin_site_statutes_url(current_site),
+          :description => t('admin.cities.menu_tab_description')) %></li>
+    <% end %>     
+  </ul> 
+</div>
+<%= render "admin/dashboards/notes" %>
+
+

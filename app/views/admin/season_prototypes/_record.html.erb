@@ -1,0 +1,4 @@
+<td><%= link_to(record.labelize, url_for([:edit, :admin, current_site, record])) %></td>
+<td><%= record.start_date %></td>
+<td><%= record.end_date %></td>
+<td class='actions'><%= icons_to_actions([:edit, :destroy], record) %></td>

@@ -1,0 +1,6 @@
+var edit_season_form = $("<%= escape_javascript(render(:partial => 'admin/rental_property_seasons/modal_form')) %>").appendTo('body');
+edit_season_form.find('input:[type="text"].date').datepicker();
+$('html, body').animate({scrollTop:0}, 'slow');
+edit_season_form.modal({backdrop:'static', show:true}).bind('hidden', function(e) {
+	$(this).remove();
+});

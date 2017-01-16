@@ -1,0 +1,216 @@
+en:
+  promotions: "Promotions"
+  bedrooms: "bedroom(s)"
+  rates: "Rates per week"
+  details: "Details"
+  description: "Description"
+  price_on_request: "Price on request"
+  on_request: "On request"
+  from: From
+  go: Go
+  to: to
+
+
+  home:
+    featured_sale_properties: Selection of properties for sale
+    view_all_sale_properties: View all properties for sale
+    featured_rental_properties: Selection of properties for rent
+    view_all_rental_properties: View all properties for rent
+
+  activerecord:
+    models:
+      rental_property_list: Rental Property List
+      sale_property: Property for sale
+      rental_property: Rental Property
+      sale_property_list: List of Properties for sale 
+
+  inquiry_mailer:
+    rental_property_notification:
+      start_date: "Check-in date"
+      property: "Property"
+      person_count: "Guest(s)"
+      end_date: "Check-out date"  
+    annual_rental_notification:
+      bedroom_count: "Bedroom count"
+      max_price: "Max price"
+      area: "Area"          
+  helpers:
+    select:
+      area:
+        prompt: "Area"
+      city:
+        prompt: "Destination"
+      category:
+        prompt: "Type"
+      bedroom_count:
+        prompt: "Bedrooms"
+      price:
+        prompt: "Price per week"
+    submit:
+      rental_property_inquiry:
+        create: "Send request"
+        
+  sale_properties:
+    collection:
+      continue: More details
+      empty: "No property for sale was found."
+    links:
+      previous: Previous
+      next: Next
+      
+  rental_properties:
+    collection:
+      continue: More details
+      empty: "No rental property was found."
+    links:
+      previous: Previous
+      next: Next
+      
+  annual_rentals:
+    collection:
+      continue: More details
+      empty: "<p>Currently we have no rentals available.<br>You can submit your search and we will contact you if a property is released.</p>"
+    links:
+      previous: Previous
+      next: Next        
+    form_intro: "You can submit your search and we will contact you if a property is released."      
+        
+  realty:
+    price_notes: "Please note the prices above do not include 10 % service charge and 5 % tourism tax."
+    view_all_promotions: "View all promotions"
+    minimum_night: "%{count} nights minimum"
+    request_infos: Request more information   
+    request_availability: Request Availability
+    sale_inquiry_title: More Information
+    stickers:
+      meta_title: Equipment 
+    metas:
+      max_guest: Max guest
+      bedroom_count: Bedrooms  
+      bathroom_count: Bathrooms   
+      room_count: Rooms Count
+      min_price: Min Price
+      area: Area
+      children_policy: Child policy
+      pets_policy: Pets policy  
+      price: Price
+      year_built: Year of construction
+      acreage: Land area
+      building_size: Property area
+      
+    filters:
+      bedroom_count: "%{count} bedroom(s)"
+      with_pool: "Pool"
+      with_beachfront: "Beachfront"
+      area: Quartier
+      price:
+        per_week: Per week
+        less_than: "Less than %{price}"
+        more_than: "More than %{price}"
+
+  simple_form:
+    labels:
+      defaults:
+        code: Reference
+        person_count: Number of guests
+        start_date: Check-in
+        end_date: Check-out
+        area: Area
+        bedroom_count: Bedroom count
+        max_price: Max. price
+    hints:
+      code: Give a unique reference to this property
+
+  admin:
+    areas:
+      select_blank: Select an area
+      menu_tab: Areas
+      collection:
+        empty: "No areas was found %{link}"
+        create_item: "Create a new one now."
+      actions:
+        new: Add a new area
+        destroy: Delete this area
+        edit: Edit this area
+        index: Areas list
+        previous: Previous
+        destroy: Destroy
+      titles:
+        new: Add a new area
+        index: Areas list
+        edit: Edit this area
+      columns:
+        area: Area
+        
+    rental_property_lists:
+      actions:
+        edit: Configuration
+        new: New
+        destroy: Destroy
+      tooltips:
+        edit: Edit listing configuration
+      titles:
+        edit: Edit listing configuration
+            
+    rental_properties:
+      select_blank: Select a rental property
+      menu_tab: Rental properties
+      collection:
+        empty: "No rental properties was found %{link}"
+        create_item: "Create a new one now."
+      actions:
+        new: Add a new rental property
+        destroy: Delete this rental property
+        edit: Edit this rental property
+        index: Rental properties list
+        view: View this rental property
+        previous: Previous
+        destroy: Destroy
+      titles:
+        new: Add a new rental property
+        index: Rental properties list
+        edit: Edit this rental property
+      columns:
+        rental_property: Property
+
+    sale_property_lists:
+      actions:
+        edit: Configuration
+        new: New
+        destroy: Destroy 
+      tooltips:
+        edit: Edit listing configuration
+      titles:
+        edit: Edit listing configuration
+
+    sale_properties:
+      select_blank: Select a sale property
+      menu_tab: Sale properties
+      collection:
+        empty: "No sale properties was found %{link}"
+        create_item: "Create a new one now."
+      actions:
+        new: Add a new sale property
+        destroy: Delete this sale property
+        edit: Edit this sale property
+        index: Sale properties list
+        view: View this sale property
+        previous: Previous
+        destroy: Destroy
+      titles:
+        new: Add a new sale property
+        index: Sale properties list
+        edit: Edit this sale property
+      columns:
+        rental_property: Property  
+        
+
+    season:
+      links: 
+        add: Ajouter une saison
+        remove: Supprimer cette saison
+
+    rate:
+      links: 
+        add: Ajouter un tarif
+        remove: Supprimer ce tarif

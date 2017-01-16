@@ -1,0 +1,24 @@
+<%# cache [collection_record_cache_key(sale_property), sale_property.updated_at.to_i] do %>
+	<%
+		tags = []
+		tags << realty_meta_tag("bedroom_count", sale_property.bedroom_count)
+		tags << realty_meta_tag("price", sale_price_value(sale_property))
+		if sale_property.meta.area.present? 
+  			tags << realty_meta_tag("area", sale_property.meta.area.name)
+		end 
+	%>
+	<%= grid_item_tag_for(sale_property) do %>
+		<%= render_record_thumb(sale_property) %>
+		<%= grid_item_caption_tag do %>
+			<%= render_record_title(sale_property) %> 
+			<div class="tags-list">
+				<%= tags.compact.join(" ").html_safe %>
+			</div>
+			<%= render_record_description(sale_property) %>
+			<%= render_record_link(sale_property) %>
+		<% end %>
+		<% if sale_property.badge.present? %>
+			<div class="thumbnail-badge"><%= sale_property.badge %></div>
+		<% end %>
+	<% end %>
+<%# end %>

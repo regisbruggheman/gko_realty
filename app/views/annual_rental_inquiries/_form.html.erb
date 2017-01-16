@@ -1,0 +1,28 @@
+<p><em><%= t(:"annual_rentals.form_intro") %></em></p>
+<%= simple_form_for(:annual_rental_inquiry, 
+  :url => annual_rental_inquiries_path, :method => :post) do |form| %>
+  <%= hidden_field_tag(:return_to, request.url) %>
+  <%= form.hidden_field :site_id, :value => site.id %>
+
+  <%= render 'flash' %>
+  <%= form.error_notification %>
+  
+  <div class='row'> 
+    <div class='span12'>
+		<%= form.input :name, :hint => false  %>
+		<%= form.input :email, :hint => false %>
+		<%= form.input :phone, :hint => false, :required => true %>
+		<%= form.input :bedroom_count,  :hint => false, :required => true %>
+		<%= form.input :max_price, :hint => false, :required => true %>
+		<%= form.input :area, :hint => false, :required => false %>
+	  <%= form.input :message, 
+		:as => :text, 
+		:hint => false, 
+		:input_html => { :rows => 8 } %>
+    </div> 
+  </div>
+  <%= render 'anti_spam_field', :f => form %>
+  <div class='controls'>
+    <%= form.button :submit, t("send_inquiry"), :class => "btn btn-block submit" %>
+  </div>
+<% end %>

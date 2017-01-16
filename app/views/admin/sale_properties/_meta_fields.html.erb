@@ -1,0 +1,28 @@
+<legend>Metas</legend>
+<%= f.input :video_url %>
+<%= f.input :code %>
+  <% if current_site.preferred_use_statutes %>
+    <%= f.association :statute, :collection =>  current_site.statutes.with_class_name("SaleProperty"), :label_method => :title %>
+  <% end %>
+<%= f.input :currency, :value => f.object.persisted? ? f.object.currency : parent.currency %>
+<%= f.input :price, :hint => t("simple_form.hints.sale_property.price", :currency => f.object.currency) %>
+
+<%= f.input :bedroom_count %>
+<%= f.input :bathroom_count %>
+<%= f.input :acreage %> 
+<%= f.input :building_size %>
+<%= f.input :year_built %>
+<%= f.input :room_count %>
+<%= f.input :badge %>
+<%= f.input :show_in_homepage %>
+
+<legend>Localisation</legend>
+<%= render "/admin/areas/select", :f => f %>
+<%#= f.input :postcode %>
+<%#= f.input :city %>
+<%= f.input :lat_long %>
+<%#= render(:partial => "/admin/shared/form_countries_select", :locals => { :f => f }) %>
+<% if current_site.preferred_use_realty_agent %>
+  <%= render(:partial => "/admin/shared/realty_agents_select", :locals => { :f => f }) %>
+<% end %>
+<%= f.input :notes, :input_html => { :rows => 6 } %>

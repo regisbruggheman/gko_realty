@@ -1,0 +1,53 @@
+<%= simple_form_for(:rental_property_inquiry, 
+  :url => rental_property_inquiries_path, 
+  :method => :post,
+  :remote => true) do |form| %>
+  <%= hidden_field_tag(:return_to, request.url) %>
+  <%= form.hidden_field :site_id, :value => site.id %>
+  <%= form.hidden_field :property_id %>
+  <%= render 'flash' %>
+  <%= form.error_notification %>
+  <div class='row'> 
+    <div class='col-sm-6'>
+      <div class="form-group">
+        <%= form.input :name, :hint => false, :input_html => { :class => "form-control" }  %>
+      </div>
+      <div class="form-group">
+        <%= form.input :email, :hint => false, :input_html => { :class => "form-control" } %>
+      </div>
+      <div class="form-group">
+        <%= form.input :phone, :hint => false, :required => false, :input_html => { :class => "form-control" } %>
+      </div>
+    </div>
+    <div class='col-sm-6'>
+      <div class="form-group">
+      <%= form.input :person_count, :hint => false, :required => false, :input_html => { :class => "form-control" } %>
+    </div>
+    <div class="form-group">
+      <%= form.input :start_date, 
+        :as => :string, 
+		    :required => false,
+        :input_html => { :class => ["datepicker", "form-control"], 
+          :"data-date-format" => "yyyy-mm-dd" } %>
+    </div>
+    <div class="form-group">
+      <%= form.input :end_date, 
+        :as => :string, 
+		    :required => false, 
+        :input_html => { :class => ["datepicker", "form-control"], 
+          :data => { :"date-format" => "yyyy-mm-dd"} } %>   
+    </div>
+  </div> 
+  </div>
+  <div class="form-group">
+  <%= form.input :message, 
+	:as => :text, 
+	:hint => false, 
+	:input_html => { :rows => 4, :class => "form-control" } %>
+  </div>
+  <%= render 'anti_spam_field', :f => form %>
+  <div class='form-group'>
+    <%= form.button :submit, t("send_inquiry"), :class => "btn btn-primary submit" %>
+  </div>
+  <p id="thanks" data-alert="" class="alert alert-success"><%= t("gko.inquiry_thanks") %></p>
+<% end %>  

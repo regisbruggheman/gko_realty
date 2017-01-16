@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head> 
+	<body>  
+		<p>
+		<%= t('inquiry_mailer.notification.greeting') %>,<br/>
+
+    <%= t('inquiry_mailer.notification.you_received_new_inquiry') %><br/>
+    <%= t('.property') %>: <%= @inquiry.property.try(:title) %><br/>
+    <%= t('inquiry_mailer.notification.inquiry_starts') %><br/>
+    <%= t('inquiry_mailer.notification.from') %>: <%= @inquiry.name %><br/>
+    <%= t('inquiry_mailer.notification.email') %>: <%= @inquiry.email %><br/>
+    <%= t('inquiry_mailer.notification.phone') %>: <%= @inquiry.phone %><br/>
+    <%= t('inquiry_mailer.rental_property_notification.start_date') %>: <%= @inquiry.start_date %><br/>
+    <%= t('inquiry_mailer.rental_property_notification.end_date') %>: <%= @inquiry.end_date %><br/>
+    <%= t('inquiry_mailer.rental_property_notification.person_count') %>: <%= @inquiry.person_count %><br/>
+    <%= t('inquiry_mailer.notification.message') %>:<br/>
+    <%= @inquiry.message %><br/>
+
+    <%= t('inquiry_mailer.notification.inquiry_ends') %><br/>
+
+    <%= t('inquiry_mailer.notification.closing_line') %>,
+    <%= @inquiry.site.title %><br/>
+		</p>
+	</body> 
+</html>

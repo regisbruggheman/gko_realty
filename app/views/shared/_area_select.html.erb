@@ -1,0 +1,14 @@
+<% @city ||= params[:search].nil? || params[:search][:in_city].blank? ? site.cities.first : site.cities.find(params[:search][:in_city].to_i) %>
+  <%#= f.select :in_area, 
+    options_from_collection_for_select(@city.areas, :id, :name, params[:search].present? ? params[:search][:in_area] : nil),
+    { :prompt => t(:'helpers.select.area.prompt').html_safe }, 
+    { :class => "form-control", :id => 'search_area_id' } %>
+<div class='form-group'>
+  <%= f.input :in_area, 
+      :collection => site.cities, 
+      :as => :grouped_select, 
+      :group_method => :areas, 
+      :label => false,
+      :prompt => t(:'helpers.select.area.prompt').html_safe, 
+      :input_html => { :class => "form-control", :id => 'search_area_id' }  %>
+</div>

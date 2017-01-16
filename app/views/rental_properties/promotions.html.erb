@@ -1,0 +1,8 @@
+<%= "#{page_title(parent.title + ' Promotions')}".html_safe %>
+<%= render 'images/slideshow', :images => parent.images if parent.images.try(:any?) %>
+<% content_for :sidebar do %>
+  <%= render "rental_properties/filter", :section => parent %>
+<% end %>
+<div class='records-container'>
+  <%= render "records" %>
+</div>

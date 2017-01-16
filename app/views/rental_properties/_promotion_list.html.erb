@@ -1,0 +1,9 @@
+<% if @properties_in_promotions.try(:any?) %>
+<div class='partial realty-promotion hide-on-print'>
+  <h4><%= "Promotions".html_safe %></h4>
+  <ul class="grid grid2">
+    <%= render :partial => "rental_properties/promotion_item", :collection => @properties_in_promotions, :as => 'record' %>
+  </ul>
+  <%= link_to(t(:'realty.view_all_promotions'), add_url_param(:with_promo,'true', url_for([parent])), :class => 'btn view_all') %>  
+</div>
+<% end %>
