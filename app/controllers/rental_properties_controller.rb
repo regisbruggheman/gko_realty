@@ -24,7 +24,7 @@ class RentalPropertiesController < ContentsController
         render :pdf => "pdf_#{resource.permalink}",
           :disposition => "inline", # default 'inline'
           :formats => [:pdf, :html],
-          :show_as_html => params[:debug].present?,
+          :show_as_html => 0,#params[:debug].present?,
           :layout => "pdf",
           :encoding => "UTF-8"#,
           #:header => { :right => "#{resource.permalink} [page] of [topage]" }
