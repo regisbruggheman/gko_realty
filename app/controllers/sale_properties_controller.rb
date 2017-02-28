@@ -3,24 +3,41 @@ class SalePropertiesController < ContentsController
 
   belongs_to :sale_property_list
   before_filter :set_inquiry, :only => :show
-  
+
   has_scope :with_bedroom_count, :in_city, :in_area, :with_title, :with_category, :only => :index
 
   def show
     respond_to do |format|
       format.html
       format.pdf do
-        render :pdf => "pdf_#{resource.permalink}", 
+        render :pdf => "pdf_#{resource.permalink}",
           :disposition => "inline", # default 'inline'
-          :formats => [:pdf, :html], 
-          :show_as_html => params[:debug].present?,
-          :layout => "pdf", 
+          :formats => [:pdf, :html],
+          :show_as_html => 0, #params[:debug].present?,
+          :layout => "pdf",
           :encoding => "UTF-8"#,
-          #:header => { :right => "#{resource.permalink} [page] of [topage]" }
+          #:type => 'application/pdf',
+        #  :save_to_file => Rails.root.join('pdfs', "#{resource.permalink}.pdf")
+
+        #html = render_to_string(:action => :show, :layout => "pdf")
+        #pdf = WickedPdf.new.pdf_from_string(html)
+
+        #send_data(pdf,
+        #  :filename => "pdf_#{resource.permalink}",
+        #  :disposition => 'attachment')
       end
     end
   end
-  
+
+  def download
+    html = render_to_string(:action => :show, :layout => "pdf")
+    pdf = WickedPdf.new.pdf_from_string(html)
+
+    send_data(pdf,
+      :filename => "pdf_#{resource.permalink}",
+      :disposition => 'attachment')
+  end
+
   protected
     def load_resources
       params[:page] = (params[:search][:page] || 1) if searching?
